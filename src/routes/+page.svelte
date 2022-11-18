@@ -1,6 +1,9 @@
 <script lang="ts">
-  import Counter from "../lib/Counter.svelte";
   import "../app.css";
+  import Counter from "../lib/Counter.svelte";
+  import type { PageData } from "./$types";
+
+  export let data: PageData;
 </script>
 
 <svelte:head>
@@ -11,5 +14,5 @@
   />
 </svelte:head>
 <main class="w-screen h-screen flex justify-center items-center">
-  <Counter />
+  <Counter {data} />
 </main>
