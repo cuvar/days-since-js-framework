@@ -1,6 +1,6 @@
 import { error } from "@sveltejs/kit";
 import type { RequestHandler } from "./$types";
-import redis from "../../../../src/util/redis";
+import redis from "../../../util/redis";
 import { POST_TOKEN } from "$env/static/private";
 
 const dateRegex = new RegExp("2[0-9]{3}-(0[1-9]|10|11|12)-(0[1-9]|10|11|12)");

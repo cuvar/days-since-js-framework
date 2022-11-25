@@ -13,6 +13,15 @@
     content="Counter for the days since the latest JS framework"
   />
 </svelte:head>
-<main class="w-screen h-screen flex justify-center items-center">
-  <Counter {data} />
-</main>
+<div class="font-mono w-screen h-screen">
+  <main class="w-full h-full flex justify-center items-center">
+    {#if data.status == 500}
+      <div>An error occurred</div>
+    {:else}
+      <Counter {data} />
+    {/if}
+  </main>
+  <footer class="text-sm text-center py-8 absolute bottom-0 w-full mx-4">
+    You think the data is wrong? Send me an email: info (at) cuvar.dev
+  </footer>
+</div>
