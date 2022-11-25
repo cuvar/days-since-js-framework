@@ -1,9 +1,6 @@
-import { error } from "@sveltejs/kit";
 import type { RequestHandler } from "./$types";
 import redis from "../../../util/redis";
 import { POST_TOKEN } from "$env/static/private";
-
-const linkRegex = new RegExp("http(s)?://[a-z]*(.[a-z])*");
 
 export const POST: RequestHandler = async ({ request }) => {
   const { link, name, token } = await request.json();
@@ -15,13 +12,26 @@ export const POST: RequestHandler = async ({ request }) => {
   }
 
   let linkToUpdate = link;
-  if (typeof link !== "string" || !linkRegex.test(link) || link.length > 50) {
+
+  try {
+    let url = new URL(link);
+  } catch (_) {
+    linkToUpdate = "";
+  }
+
+  if (typeof link !== "string" || link.length > 100) {
     linkToUpdate = "";
   }
 
   let nameToUpdate = name;
-  if (typeof name !== "string" || name.length > 20) {
+  if (typeof name !== "string" || name.length > 30) {
     nameToUpdate = "";
+  }
+
+  if (linkToUpdate === "" || nameToUpdate === "") {
+    return new Response(JSON.stringify({ message: "Bad Request" }), {
+      status: 400,
+    });
   }
 
   try {
