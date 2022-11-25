@@ -14,14 +14,14 @@ export const POST: RequestHandler = async ({ request }) => {
     });
   }
 
-  let linkToUpdate = "";
+  let linkToUpdate = link;
   if (typeof link !== "string" || !linkRegex.test(link) || link.length > 50) {
-    linkToUpdate = link;
+    linkToUpdate = "";
   }
 
-  let nameToUpdate = "";
+  let nameToUpdate = name;
   if (typeof name !== "string" || name.length > 20) {
-    nameToUpdate = name;
+    nameToUpdate = "";
   }
 
   try {
