@@ -21,7 +21,7 @@
       <Counter {data} />
     {/if}
   </main>
-  <footer class="text-sm text-center py-8 absolute bottom-0 w-full mx-4">
+  <footer class="text-sm text-center py-8 absolute bottom-0 w-full px-4">
     You think the data is wrong? Send me an email: info (at) cuvar.dev
   </footer>
 </div>
