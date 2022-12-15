@@ -3,7 +3,9 @@ import type { RequestHandler } from "./$types";
 import redis from "../../../util/redis";
 import { POST_TOKEN } from "$env/static/private";
 
-const dateRegex = new RegExp("2[0-9]{3}-(0[1-9]|10|11|12)-(0[1-9]|10|11|12)");
+const dateRegex = new RegExp(
+  "2[0-9]{3}-(0[1-9]|10|11|12)-(0[1-9]|(1|2)[0-9]|30|31)"
+);
 
 export const POST: RequestHandler = async ({ request }) => {
   const now = new Date();
