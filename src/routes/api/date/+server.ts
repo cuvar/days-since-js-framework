@@ -21,10 +21,12 @@ export const POST: RequestHandler = async ({ request }) => {
   }
 
   if (typeof date !== "string" || !dateRegex.test(date)) {
-    dateToUpdate = today;
-  } else {
-    dateToUpdate = date;
+    return new Response(JSON.stringify({ message: "Bad Request" }), {
+      status: 400,
+    });
   }
+
+  dateToUpdate = date;
 
   await redis.set("datelastjsframework", dateToUpdate);
   return new Response(JSON.stringify({ message: "successful" }));
