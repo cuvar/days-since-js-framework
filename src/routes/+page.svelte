@@ -10,7 +10,11 @@
   <title>Days since last JS framework</title>
   <meta
     name="description"
-    content="Counter for the days since the latest JS framework"
+    content="Counter for the days since the release of the latest jaavscript framework"
+  />
+  <meta
+    name="keywords"
+    content="javaScript, framework, counter, last, js, days, Since, release"
   />
 </svelte:head>
 <div class="font-mono w-screen h-screen">
