@@ -46,4 +46,9 @@
       >!
     </div>
   </footer>
+  <script
+    defer
+    data-domain="js.cuvar.dev"
+    src="https://plausible.io/js/script.js"
+  ></script>
 </div>
