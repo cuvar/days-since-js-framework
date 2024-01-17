@@ -1,6 +1,6 @@
 # days-since-js-framework
 
-Simple counter for counting days since latest js framework release. Productive version can be found at [here](https://js.cuvar.dev)
+Simple counter for counting days since latest js framework release. Productive version can be found at [here](https://dayssincelastjsframework.com/)
 
 ## Contributing
 
