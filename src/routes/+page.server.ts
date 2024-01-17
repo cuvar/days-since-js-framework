@@ -1,5 +1,6 @@
-import { error } from "@sveltejs/kit";
 import { getLatest } from "$lib/server/db/query";
+import { calculateDays } from "$lib/util/date";
+import { error } from "@sveltejs/kit";
 import type { PageServerLoad } from "./$types";
 
 export const load: PageServerLoad = async ({ params }) => {
@@ -21,11 +22,3 @@ export const load: PageServerLoad = async ({ params }) => {
     error(401, "Cannot load data");
   }
 };
-
-function calculateDays(date: Date): number {
-  // difference in days
-  const diffTime = Math.abs(new Date().getTime() - date.getTime());
-  const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
-
-  return diffDays;
-}
