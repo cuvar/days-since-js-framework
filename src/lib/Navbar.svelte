@@ -1,4 +1,11 @@
-<nav class="absolute top-0 w-full">
+<nav class="w-full flex justify-between">
+  <div class="pt-8 px-8 text-left space-x-4">
+    <a
+      href={"/"}
+      class="hover:underline text-blue-800"
+      rel="noreferrer noopenener">Home</a
+    >
+  </div>
   <div class="pt-8 px-8 text-right space-x-4">
     <a
       href={"/history"}

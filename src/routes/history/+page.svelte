@@ -20,17 +20,17 @@
     content="javaScript, framework, counter, last, js, days, Since, release"
   />
 </svelte:head>
-<div
-  class="w-full h-full flex justify-center items-center flex-col space-y-8 px-8"
->
+<div class="w-full h-full flex items-center flex-col space-y-8 px-8">
   <h1 class="font-bold text-2xl">History</h1>
-  <div class="grid grid-cols-4 gap-4 text-sm">
+  <div
+    class="grid grid-cols-4 gap-4 text-sm sm:text-base text-left overflow-y-scroll"
+  >
     <div class="font-bold">Framework</div>
     <div class="font-bold">Link</div>
     <div class="font-bold">Release</div>
-    <div class="font-bold">Days</div>
+    <div class="font-bold text-center">Days</div>
     {#each data.frameworks as framework}
-      <div>{framework.framework.name}</div>
+      <div class="text-left">{framework.framework.name}</div>
       <div>
         <a
           href={framework.framework.link}
@@ -40,7 +40,7 @@
         >
       </div>
       <div>{formatDate(framework.framework.date)}</div>
-      <div>{framework.count}</div>
+      <div class="text-center">{framework.count}</div>
     {/each}
   </div>
   <!-- <table class="table-auto">

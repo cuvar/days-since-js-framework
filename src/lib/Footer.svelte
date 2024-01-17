@@ -1,4 +1,4 @@
-<footer class="text-sm text-center py-8 absolute bottom-0 w-full px-4">
+<footer class="text-sm text-center py-8 w-full px-4">
   <div>
     You think the data is wrong? Send me an email: luca (at) cuvar.dev or file
     an issue <a

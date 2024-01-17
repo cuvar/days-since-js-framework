@@ -6,7 +6,7 @@
 
 <div class="font-mono w-screen h-screen">
   <Navbar />
-  <main class="h-full w-full">
+  <main class="h-full w-full py-10">
     <slot />
   </main>
   <Footer />
