@@ -1,13 +1,23 @@
 import { POST_TOKEN } from "$env/static/private";
-import redis from "../../../util/redis";
+import { addFramework } from "$lib/server/db/query";
 import type { RequestHandler } from "./$types";
 
+const DATE_REGEX = new RegExp(
+  "2[0-9]{3}-(0[1-9]|10|11|12)-(0[1-9]|(1|2)[0-9]|30|31)"
+);
+
 /**
- * use /api/add instead
- * @deprecated
+ * Request body:
+ * {
+ *  "link": "https://svelte.dev/",
+ *  "name": "Svelte",
+ *  "date": "2022-01-31",
+ *  "token": <token>
+ * }
  */
+
 export const POST: RequestHandler = async ({ request }) => {
-  const { link, name, token } = await request.json();
+  const { link, name, token, date } = await request.json();
 
   if (token !== POST_TOKEN) {
     return new Response(JSON.stringify({ message: "Unauthorized" }), {
@@ -18,7 +28,7 @@ export const POST: RequestHandler = async ({ request }) => {
   let linkToUpdate = link;
 
   try {
-    let url = new URL(link);
+    new URL(link);
   } catch (_) {
     linkToUpdate = "";
   }
@@ -38,9 +48,14 @@ export const POST: RequestHandler = async ({ request }) => {
     });
   }
 
+  if (typeof date !== "string" || !DATE_REGEX.test(date)) {
+    return new Response(JSON.stringify({ message: "Bad Request" }), {
+      status: 400,
+    });
+  }
+
   try {
-    await redis.set("jsframeworklink", linkToUpdate);
-    await redis.set("jsframework", nameToUpdate);
+    addFramework(nameToUpdate, linkToUpdate, date);
     return new Response(JSON.stringify({ message: "successful" }));
   } catch (error) {
     return new Response(JSON.stringify({ message: "Internal server error" }), {

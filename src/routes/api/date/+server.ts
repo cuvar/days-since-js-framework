@@ -7,6 +7,10 @@ const dateRegex = new RegExp(
   "2[0-9]{3}-(0[1-9]|10|11|12)-(0[1-9]|(1|2)[0-9]|30|31)"
 );
 
+/**
+ * use /api/add instead
+ * @deprecated
+ */
 export const POST: RequestHandler = async ({ request }) => {
   const now = new Date();
   const today = `${now.getFullYear()}-${now.getMonth() + 1}-${now.getDate()}`;
