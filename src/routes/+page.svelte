@@ -29,11 +29,7 @@
     </div>
   </nav>
   <main class="w-full h-full flex justify-center items-center">
-    {#if data.status == 500}
-      <div>An error occurred</div>
-    {:else}
-      <Counter {data} />
-    {/if}
+    <Counter {data} />
   </main>
   <footer class="text-sm text-center py-8 absolute bottom-0 w-full px-4">
     <div>

@@ -1,5 +1,13 @@
 <script lang="ts">
-  export let data: { count: number; name: string; link: string; date: string };
+  import type { FrameworkData } from "../server/types";
+
+  type Props = {
+    count: number;
+    date: string;
+    framework: FrameworkData;
+  };
+
+  export let data: Props;
 </script>
 
 <div class="flex flex-col text-center text-xl space-y-8 mx-4">
@@ -10,10 +18,10 @@
     <p class="w-full text-center">
       Last JS framework:
       <a
-        href={data.link}
+        href={data.framework.link}
         class="hover:underline text-blue-800"
         target="_blank"
-        rel="noreferrer noopenener">{data.name}</a
+        rel="noreferrer noopenener">{data.framework.name}</a
       >
       released on {data.date}
     </p>
