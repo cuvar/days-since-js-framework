@@ -1,5 +1,5 @@
 import { error } from "@sveltejs/kit";
-import { getLatest } from "../server/db/db";
+import { getLatest } from "$lib/server/db/query";
 import type { PageServerLoad } from "./$types";
 
 export const load: PageServerLoad = async ({ params }) => {

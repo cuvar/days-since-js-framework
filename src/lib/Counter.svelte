@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { FrameworkData } from "../server/types";
+  import type { FrameworkData } from "$lib/server/types";
 
   type Props = {
     count: number;
