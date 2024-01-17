@@ -43,24 +43,4 @@
       <div class="text-center">{framework.count}</div>
     {/each}
   </div>
-  <!-- <table class="table-auto">
-    <thead>
-      <tr>
-        <th>Framework</th>
-        <th>Link</th>
-        <th>Release date</th>
-        <th>Days since release</th>
-      </tr>
-    </thead>
-    <tbody>
-      {#each data.frameworks as framework}
-        <tr>
-          <th>{framework.framework.name}</th>
-          <th><a href={framework.framework.link}>Link</a></th>
-          <th>{framework.date}</th>
-          <th>{framework.count}</th>
-        </tr>
-      {/each}
-    </tbody>
-  </table> -->
 </div>
