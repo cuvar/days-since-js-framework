@@ -37,7 +37,7 @@
   </main>
   <footer class="text-sm text-center py-8 absolute bottom-0 w-full px-4">
     <div>
-      You think the data is wrong? Send me an email: info (at) cuvar.dev or file
+      You think the data is wrong? Send me an email: luca (at) cuvar.dev or file
       an issue <a
         href={"https://github.com/cuvar/days-since-js-framework/issues"}
         class="hover:underline text-blue-800"
@@ -46,5 +46,9 @@
       >!
     </div>
   </footer>
-  <script defer data-domain="dayssincelastjsframework.com" src="https://plausible.io/js/script.js"></script>
+  <script
+    defer
+    data-domain="dayssincelastjsframework.com"
+    src="https://plausible.io/js/script.js"
+  ></script>
 </div>
