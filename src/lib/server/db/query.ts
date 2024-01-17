@@ -52,3 +52,21 @@ export async function getLastN(number: number) {
     process.exit(1);
   }
 }
+
+export async function addFramework(name: string, link: string, date: string) {
+  try {
+    await prisma.framework.create({
+      data: {
+        name: name,
+        link: link,
+        date: new Date(date),
+      },
+    });
+
+    await prisma.$disconnect();
+  } catch (error) {
+    console.error(error);
+    await prisma.$disconnect();
+    process.exit(1);
+  }
+}
