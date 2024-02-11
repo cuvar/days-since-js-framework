@@ -13,7 +13,7 @@
   />
   <meta
     name="keywords"
-    content="javaScript, framework, counter, last, js, days, Since, release"
+    content="javaScript, framework, counter, last, js, days, since, release"
   />
 </svelte:head>
 

@@ -6,6 +6,7 @@ export type CounterData = {
 export type FrameworkData = {
   id: number;
   name: string;
-  link: string;
+  link: string | null;
+  releaseLink: string | null;
   date: Date;
 };

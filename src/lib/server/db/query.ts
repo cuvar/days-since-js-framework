@@ -4,7 +4,11 @@ const prisma = new PrismaClient();
 
 export async function getAllFrameWorks() {
   try {
-    const allFrameWorks = await prisma.framework.findMany();
+    const allFrameWorks = await prisma.framework.findMany({
+      orderBy: {
+        date: "desc", // Order the results by date in descending order
+      },
+    });
     await prisma.$disconnect();
     return allFrameWorks;
   } catch (error) {

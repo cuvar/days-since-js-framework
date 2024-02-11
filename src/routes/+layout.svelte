@@ -4,7 +4,7 @@
   import "../app.css";
 </script>
 
-<div class="font-mono w-screen h-screen">
+<div class="font-mono w-screen h-full min-h-screen">
   <Navbar />
   <main class="h-full w-full py-10">
     <slot />
