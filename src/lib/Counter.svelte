@@ -18,7 +18,7 @@
     <p class="w-full text-center">
       Last JS framework:
       <a
-        href={data.framework.link}
+        href={data.framework.link || data.framework.releaseLink}
         class="hover:underline text-blue-800"
         target="_blank"
         rel="noreferrer noopenener">{data.framework.name}</a
