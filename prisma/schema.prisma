@@ -11,8 +11,16 @@ datasource db {
 }
 
 model Framework {
-  id   Int      @id @default(autoincrement())
-  name String   @unique
-  link String   @unique
-  date DateTime @unique @default(now())
+  id          Int      @id @default(autoincrement())
+  name        String   @unique
+  link        String
+  releaseLink String?
+  type        Type     @default(STABLE)
+  date        DateTime @default(now())
+}
+
+enum Type {
+  STABLE
+  ALPHA
+  BETA
 }
