@@ -30,6 +30,7 @@
 	"type": "module",
 	"dependencies": {
 		"@prisma/client": "^5.8.1",
+		"@tanstack/svelte-query": "^5.21.4",
 		"@upstash/redis": "^1.16.1"
 	}
 }
