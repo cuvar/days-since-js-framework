@@ -1,5 +1,7 @@
 <script lang="ts">
   import Counter from "$lib/Counter.svelte";
+  import Error from "$lib/Error.svelte";
+  import Loading from "$lib/Loading.svelte";
   import { createQuery } from "@tanstack/svelte-query";
   import type { PageData } from "./$types";
 
@@ -31,10 +33,10 @@
 
 <div class="w-full h-full flex justify-center items-center">
   {#if $query.isLoading}
-    <p>Loading...</p>
+    <Loading />
   {:else if $query.isError}
-    <p>Error: {$query.error.message}</p>
+    <Error />
   {:else if $query.isSuccess}
-    <Counter {data} />
+    <Counter data={$query.data} />
   {/if}
 </div>
