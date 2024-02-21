@@ -2,8 +2,6 @@ import { getHistoryData } from "$lib/server/query/history";
 import { error } from "@sveltejs/kit";
 import type { PageServerLoad } from "./$types";
 
-export const ssr = false;
-
 export const load: PageServerLoad = async ({ params }) => {
   try {
     return await getHistoryData();
