@@ -23,7 +23,7 @@
   <title>Latest JS framework releases</title>
   <meta
     name="description"
-    content="Counter for the days since the release of the latest jaavscript framework"
+    content="History of JavaScript frameworks and their release dates."
   />
   <meta
     name="keywords"

@@ -23,7 +23,7 @@
   <title>Days since last JS framework</title>
   <meta
     name="description"
-    content="Counter for the days since the release of the latest jaavscript framework"
+    content="Counter for the days since the release of the latest JavaScript framework"
   />
   <meta
     name="keywords"
