@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   icons: [{ rel: "icon", url: "/favicon.svg" }],
 };
 
-export default function RootLayout({
+export default function Layout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return children;
