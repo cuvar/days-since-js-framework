@@ -8,7 +8,11 @@ export function calculateDays(date: Date): number {
   return diffDays;
 }
 
-export function formatDate(_date: Date) {
+export function formatDate(_date: Date | null) {
+  if (!_date) {
+    return "Unknown";
+  }
+
   const date = new Date(_date);
   const year = date.getFullYear();
   const month = zeroPad(date.getMonth() + 1, 2);

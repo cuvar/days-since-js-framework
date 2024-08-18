@@ -1,9 +1,9 @@
 import { calculateDays } from "~/util/date";
-import { getAllFrameWorks } from "../db/query";
+import * as frameworkRepo from "../db/framework";
 import { type HistoryData } from "../types";
 
 export async function getHistoryData(): Promise<HistoryData[]> {
-  const frameworks = await getAllFrameWorks();
+  const frameworks = await frameworkRepo.getAll();
 
   const withDate = frameworks.map((f) => {
     const diffDays = calculateDays(f.date);
@@ -16,7 +16,7 @@ export async function getHistoryData(): Promise<HistoryData[]> {
     return {
       count: diffDays,
       date: displayDate,
-      framework: f,
+      entity: f,
     } satisfies HistoryData;
   });
 

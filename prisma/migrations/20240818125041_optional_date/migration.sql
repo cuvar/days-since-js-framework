@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE "Runtime" ALTER COLUMN "date" DROP NOT NULL,
+ALTER COLUMN "date" DROP DEFAULT;

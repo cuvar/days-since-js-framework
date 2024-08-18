@@ -1,9 +1,9 @@
 export type CounterData = {
-  framework: FrameworkData;
+  entity: EntityData;
   count: number;
 };
 
-export type FrameworkData = {
+export type EntityData = {
   id: number;
   name: string;
   link: string | null;
@@ -13,4 +13,10 @@ export type FrameworkData = {
 
 export type HistoryData = CounterData & {
   date: string;
+};
+
+export type RuntimeData = {
+  count: number | null;
+  date: string;
+  entity: Omit<EntityData, "date"> & { date: Date | null };
 };

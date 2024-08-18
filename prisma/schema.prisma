@@ -19,6 +19,15 @@ model Framework {
   date        DateTime @default(now())
 }
 
+model Runtime {
+  id          Int       @id @default(autoincrement())
+  name        String    @unique
+  link        String?
+  releaseLink String?
+  type        Type      @default(STABLE)
+  date        DateTime?
+}
+
 enum Type {
   STABLE
   ALPHA
