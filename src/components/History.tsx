@@ -14,7 +14,7 @@ export default function HistoryPage(props: Props) {
         <div className="font-bold">Release</div>
         <div className="text-center font-bold">Days</div>
         {props.frameworks.map((framework) => (
-          <div key={framework.framework.id}>
+          <div key={framework.framework.id} className="contents">
             {framework.framework.link ? (
               <a
                 href={framework.framework.link}
