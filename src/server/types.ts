@@ -10,3 +10,7 @@ export type FrameworkData = {
   releaseLink: string | null;
   date: Date;
 };
+
+export type HistoryData = CounterData & {
+  date: string;
+};
