@@ -1,11 +1,12 @@
 import { calculateDays } from "~/util/date";
-import { getAllFrameWorks } from "../db/query";
+import * as runtimeRepo from "../db/runtime";
 import { type HistoryData } from "../types";
 
 export async function getRuntimeData(): Promise<HistoryData[]> {
-  const frameworks = await getAllFrameWorks();
+  // TODO: this is wrong
+  const data = await runtimeRepo.getAll();
 
-  const withDate = frameworks.map((f) => {
+  const withDate = data.map((f) => {
     const diffDays = calculateDays(f.date);
     const displayDate = f.date.toLocaleDateString("en-US", {
       year: "numeric",
