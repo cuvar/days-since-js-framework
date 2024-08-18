@@ -14,3 +14,9 @@ export type EntityData = {
 export type HistoryData = CounterData & {
   date: string;
 };
+
+export type RuntimeData = {
+  count: number | null;
+  date: string;
+  entity: Omit<EntityData, "date"> & { date: Date | null };
+};

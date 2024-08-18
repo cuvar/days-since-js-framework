@@ -1,8 +1,8 @@
-import { type HistoryData } from "~/server/types";
+import { type RuntimeData, type HistoryData } from "~/server/types";
 import ListPage from "./List";
 
 type Props = {
-  runtimes: HistoryData[];
+  runtimes: RuntimeData[];
 };
 
 export default function RuntimesPage(props: Props) {

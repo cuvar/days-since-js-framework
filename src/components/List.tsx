@@ -1,8 +1,8 @@
-import { type HistoryData } from "~/server/types";
+import { type HistoryData, type RuntimeData } from "~/server/types";
 import { formatDate } from "~/util/date";
 
 type Props = {
-  data: HistoryData[];
+  data: HistoryData[] | RuntimeData[];
   title: string;
   firstCol: string;
 };
@@ -44,7 +44,7 @@ export default function ListPage(props: Props) {
             ) : (
               <div>{formatDate(entity.entity.date)}</div>
             )}
-            <div className="text-center">{entity.count}</div>
+            <div className="text-center">{entity.count ?? "-"}</div>
           </div>
         ))}
       </div>

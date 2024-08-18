@@ -20,12 +20,12 @@ model Framework {
 }
 
 model Runtime {
-  id          Int      @id @default(autoincrement())
-  name        String   @unique
+  id          Int       @id @default(autoincrement())
+  name        String    @unique
   link        String?
   releaseLink String?
-  type        Type     @default(STABLE)
-  date        DateTime @default(now())
+  type        Type      @default(STABLE)
+  date        DateTime?
 }
 
 enum Type {
