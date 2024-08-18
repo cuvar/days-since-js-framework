@@ -2,7 +2,7 @@ import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
 import { getCounterData } from "~/server/query/counter";
 import { getHistoryData } from "~/server/query/history";
 
-export const postRouter = createTRPCRouter({
+export const frameworkRouter = createTRPCRouter({
   getCounter: publicProcedure.query(async () => {
     const counterData = await getCounterData();
     return counterData;
