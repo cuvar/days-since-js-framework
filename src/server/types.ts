@@ -1,9 +1,9 @@
 export type CounterData = {
-  framework: FrameworkData;
+  entity: EntityData;
   count: number;
 };
 
-export type FrameworkData = {
+export type EntityData = {
   id: number;
   name: string;
   link: string | null;

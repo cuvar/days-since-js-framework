@@ -1,9 +1,9 @@
-import { type FrameworkData } from "~/server/types";
+import { type EntityData } from "~/server/types";
 
 type Props = {
   count: number;
   date: string;
-  framework: FrameworkData;
+  framework: EntityData;
 };
 
 export default function Counter(props: Props) {

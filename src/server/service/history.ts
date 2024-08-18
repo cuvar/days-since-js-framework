@@ -16,7 +16,7 @@ export async function getHistoryData(): Promise<HistoryData[]> {
     return {
       count: diffDays,
       date: displayDate,
-      framework: f,
+      entity: f,
     } satisfies HistoryData;
   });
 
