@@ -1,76 +1,45 @@
-import { PrismaClient } from "@prisma/client";
-
-const prisma = new PrismaClient();
+import { db } from "../db";
 
 export async function getAllFrameWorks() {
-  try {
-    const allFrameWorks = await prisma.framework.findMany({
-      orderBy: {
-        date: "desc", // Order the results by date in descending order
-      },
-    });
-    await prisma.$disconnect();
-    return allFrameWorks;
-  } catch (error) {
-    console.error(error);
-    await prisma.$disconnect();
-    process.exit(1);
-  }
+  const allFrameWorks = await db.framework.findMany({
+    orderBy: {
+      date: "desc", // Order the results by date in descending order
+    },
+  });
+  return allFrameWorks;
 }
 
 export async function getLatest() {
-  try {
-    const mostCurrent = await prisma.framework.findFirst({
-      orderBy: {
-        date: "desc", // Order the results by date in descending order
-      },
-    });
+  const mostCurrent = await db.framework.findFirst({
+    orderBy: {
+      date: "desc", // Order the results by date in descending order
+    },
+  });
 
-    if (!mostCurrent) {
-      throw new Error("No framework data found");
-    }
-
-    await prisma.$disconnect();
-    return mostCurrent;
-  } catch (error) {
-    console.error(error);
-    await prisma.$disconnect();
-    process.exit(1);
+  if (!mostCurrent) {
+    throw new Error("No framework data found");
   }
+
+  return mostCurrent;
 }
 
 export async function getLastN(number: number) {
-  try {
-    const mostCurrent = await prisma.framework.findMany({
-      orderBy: {
-        date: "desc", // Order the results by date in descending order
-      },
-      take: number,
-    });
+  const mostCurrent = await db.framework.findMany({
+    orderBy: {
+      date: "desc", // Order the results by date in descending order
+    },
+    take: number,
+  });
 
-    await prisma.$disconnect();
-    return mostCurrent;
-  } catch (error) {
-    console.error(error);
-    await prisma.$disconnect();
-    process.exit(1);
-  }
+  return mostCurrent;
 }
 
 export async function addFramework(name: string, link: string, date: string) {
-  try {
-    await prisma.framework.create({
-      data: {
-        name: name,
-        link: link,
-        date: new Date(date),
-      },
-    });
-
-    await prisma.$disconnect();
-  } catch (error) {
-    console.error(error);
-    await prisma.$disconnect();
-    process.exit(1);
-  }
+  await db.framework.create({
+    data: {
+      name: name,
+      link: link,
+      date: new Date(date),
+    },
+  });
 }

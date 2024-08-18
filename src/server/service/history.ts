@@ -1,4 +1,4 @@
-import { calculateDays } from "$lib/util/date";
+import { calculateDays } from "~/util/date";
 import { getAllFrameWorks } from "../db/query";
 
 export async function getHistoryData() {
