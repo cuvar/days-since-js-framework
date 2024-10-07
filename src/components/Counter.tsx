@@ -23,7 +23,7 @@ export default function Counter(props: Props) {
             target="_blank"
             rel="noreferrer noopenener"
           >
-            {props.framework.name}
+            {props.framework.name}{" "}
           </a>
           released on {props.date}
         </p>
