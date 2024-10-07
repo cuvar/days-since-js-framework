@@ -16,7 +16,7 @@ export default function Counter(props: Props) {
       <p>day(s) since the latest JavaScript framework.</p>
       <div className="flex w-full text-sm">
         <p className="w-full text-center">
-          Last JS framework:
+          Last JS framework:{" "}
           <a
             href={linkHref}
             className="text-blue-800 hover:underline"
