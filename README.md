@@ -1,3 +1,5 @@
+> ⚠️ This project is being sunset. if anyones interested in taking over, please open an issue.
+
 # days-since-js-framework
 
 Simple counter for counting days since latest js framework release. Productive version can be found at [here](https://dayssincelastjsframework.com/)
